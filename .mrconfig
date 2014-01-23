@@ -1,0 +1,5 @@
+[DEFAULT]
+git_package = `dirname $MR_CONFIG`/bin/package "$@"
+
+[source/xfce/libxfce4ui]
+checkout = git clone 'git://git.xfce.org/xfce/libxfce4ui' 'libxfce4ui'

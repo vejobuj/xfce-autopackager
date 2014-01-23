@@ -1,0 +1,32 @@
+#!/bin/bash
+
+TOP=`dirname $MR_CONFIG`
+. $TOP/bin/envvars
+
+if [ -f $OUTPUTDIR/$VERSION.log ]; then
+  echo Skipping $VERSION because it is already done.
+else
+  exec > >(tee $OUTPUTDIR/$VERSION.log)
+  exec 2>&1
+  set -e
+  set -x
+
+  git archive --format $FORMAT --output $ORIG --prefix $VERSION/ HEAD
+
+  PKGTMP=`mktemp -d`
+
+  cd $PKGTMP
+  tar xf $ORIG
+  cd $BASENAME*
+
+  # now for some debian magic
+
+  #cp -a $TOP/debian/$BASENAME/debian .
+  #debuild -S
+  #cd ..
+  #cp *.dsc *.debian.tar.gz $OUTPUT
+
+  cd $TOP
+
+  rm -rf $PKGTMP
+fi

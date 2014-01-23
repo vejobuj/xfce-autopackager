@@ -1,0 +1,8 @@
+TOP=`dirname $MR_CONFIG`
+
+BASENAME=`basename $MR_REPO`
+OUTPUTDIR=$TOP/output
+VERSION=`git describe`
+FORMAT=tar.gz
+ORIG=$OUTPUTDIR/$VERSION.orig.$FORMAT
+

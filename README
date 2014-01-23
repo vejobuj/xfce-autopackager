@@ -1,0 +1,13 @@
+How to use
+----------
+
+1. git clone git://github.com/ali1234/xfce-autopackage
+2. cd xfce-autopackager
+3. bin/go
+
+Adding more repositories
+------------------------
+
+1. cd source
+2. git clone git://whataver/repo
+3. mr register repo

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Always run this from the top of the repo.
+
+mr -t update
+cd source
+mr -t package
