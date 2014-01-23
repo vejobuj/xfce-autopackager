@@ -1,7 +1,7 @@
 How to use
 ----------
 
-1. git clone git://github.com/ali1234/xfce-autopackage
+1. git clone git://github.com/ali1234/xfce-autopackager
 2. cd xfce-autopackager
 3. bin/go
 
